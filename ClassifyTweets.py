@@ -105,7 +105,8 @@ def ClassifyTweets(csv_filename, support_filename, reject_filename, out_filename
 				code = 4
 					
 			#write tweet with code added			
-			out_file.write(tweet[0] + ";" + tweet[1] + ";" + tweet[2] + ";" + str(code) + "\n")
+			refuwrite = csv.writer(out_file, delimiter=";")
+			refuwrite.writerow([tweet[0], tweet[1], tweet[2], str(code)])
 		
 #Execute function
 if len(sys.argv) < 5:
